@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvExp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvAttack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvEnemyHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvAttackRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvExpRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSpeedRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/canvas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/shape_bg"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/player"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_baseline_boy_24" />
+
+        <ImageView
+            android:id="@+id/npc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_baseline_smart_toy_24" />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_log" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAttack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:text="@string/attack"
+        android:textSize="16sp"
+        app:cornerRadius="50dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStudy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:text="@string/study"
+        android:textSize="16sp"
+        app:cornerRadius="50dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpAttack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        app:cornerRadius="50dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        app:cornerRadius="50dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        app:cornerRadius="50dp" />
+
+
+</LinearLayout>
