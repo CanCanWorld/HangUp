@@ -128,8 +128,8 @@ class MainActivity : AppCompatActivity() {
                     level -= speedGetRadio
                     speedGetRadio++
                     speed = 2000L / speedGetRadio
-                    if (speed < 100L) {
-                        speed = 100
+                    if (speed < 5L) {
+                        speed = 5
                     }
                     refreshUi()
                 } else {
@@ -159,7 +159,7 @@ class MainActivity : AppCompatActivity() {
             val height = mBinding.player.layoutParams.height
 
             imageView.layoutParams = RelativeLayout.LayoutParams(width, height)
-            imageView.setPadding(40, 20, 0, 20)
+            imageView.setPadding(0, 40, 0, 0)
             mBinding.canvas.addView(imageView)
             val x = mBinding.npc.x - mBinding.player.x - mBinding.npc.layoutParams.width / 2
 
@@ -173,12 +173,12 @@ class MainActivity : AppCompatActivity() {
                     mBinding.canvas.removeView(imageView)
                     val textView = TextView(this@MainActivity)
                     textView.text = "-$attack"
-                    textView.x = mBinding.npc.x
+                    textView.x = mBinding.npc.x + 40
                     textView.y = mBinding.npc.y
                     textView.setTextColor(Color.RED)
                     textView.layoutParams = RelativeLayout.LayoutParams(width, height)
-                    val anim = ObjectAnimator.ofFloat(textView, "translationY",  mBinding.npc.y, -30f)
-                    anim.addListener(object : Animator.AnimatorListener{
+                    val anim = ObjectAnimator.ofFloat(textView, "translationY", mBinding.npc.y, -30f)
+                    anim.addListener(object : Animator.AnimatorListener {
                         override fun onAnimationStart(animation: Animator?) {
                         }
 
@@ -214,6 +214,9 @@ class MainActivity : AppCompatActivity() {
             //击杀
             expCurrent += enemyHpTotal * expGetRadio
             addLog("成功击杀, 获得${enemyHpTotal * expGetRadio}点经验")
+            val anim = ObjectAnimator.ofFloat(mBinding.npc, "rotation", 0f, 360f)
+            anim.duration = 1000
+            anim.start()
             if (expCurrent >= expTotal) {
                 //升级
                 expCurrent -= expTotal
