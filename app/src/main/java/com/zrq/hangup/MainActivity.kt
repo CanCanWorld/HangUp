@@ -225,6 +225,7 @@ class MainActivity : AppCompatActivity() {
             enemyHpCurrent = enemyHpTotal
         }
         refreshUi()
+        //test
     }
 
     private fun upLevel() {
